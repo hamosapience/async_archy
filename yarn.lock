@@ -1123,6 +1123,11 @@ json5@^1.0.1:
     array-includes "^3.1.4"
     object.assign "^4.1.2"
 
+kafkajs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/kafkajs/-/kafkajs-2.0.0.tgz#04f468bacc4ccb850529e2293886db6b7c41c08a"
+  integrity sha512-NdDhoEJcCBx7XTqXDbolkk5UJ4Rt4XefZ1SdP2NmFF5J39+WRh1gLdqhcQfnP8bn6sw08llfjyrg2bOhONBzZQ==
+
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz#04ac218bea46f04cb039084602c6da9e788dd45a"
