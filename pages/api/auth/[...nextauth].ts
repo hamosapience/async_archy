@@ -15,7 +15,6 @@ export default NextAuth({
   },
   callbacks: {
     async jwt({ token, profile, user, account }) {
-      console.log("token", token, "p", profile, "u", user, "a", account);
       token.roles = profile?.["http://localhost:3000/roles"];
       return token;
     },
