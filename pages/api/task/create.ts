@@ -1,13 +1,12 @@
 import { getSession } from "next-auth/react";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Kafka, logLevel } from "kafkajs";
-
-const host = process.env.HOST_IP;
+import { Kafka } from "kafkajs";
 
 const kafka = new Kafka({
   clientId: "my-app",
   brokers: [`127.0.0.1:9092`],
 });
+
 const producer = kafka.producer();
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

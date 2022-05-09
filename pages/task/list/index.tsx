@@ -1,11 +1,9 @@
 import React from "react";
 import { useSession } from "next-auth/react";
-import AccessDenied from "components/AccessDenied";
+import AccessDenied from "components/common/AccessDenied";
 
 const TaskList = () => {
   const { data: session, status } = useSession();
-
-  console.log(session, status);
 
   // When rendering client side don't display anything until loading is complete
   if (status === "loading") return null;
