@@ -1,6 +1,6 @@
 import React from "react";
 import { useSession } from "next-auth/react";
-import AccessDenied from "pages/AccessDenied";
+import AccessDenied from "components/AccessDenied";
 
 const TaskList = () => {
   const { data: session, status } = useSession();
