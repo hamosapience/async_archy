@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { Kafka } from "kafkajs";
 
 const kafka = new Kafka({
-  clientId: "my-app",
+  clientId: "task-app",
   brokers: [`127.0.0.1:9092`],
 });
 
@@ -13,9 +13,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req });
 
   await producer.connect();
+
+  const beValue = JSON.stringify({
+    event: "taskAdded",
+    taskId: "1234",
+  });
+
+  const cudValue = JSON.stringify({
+    event: "taskRecordCreated",
+    taskId: "1234",
+  });
+
   await producer.send({
-    topic: "topic-test",
-    messages: [{ value: "Hello KafkaJS user!" }],
+    topic: "topic-task",
+    messages: [{ value: beValue }, { value: cudValue }],
   });
 
   await producer.disconnect();

@@ -5,7 +5,7 @@ const kafka = new Kafka({
   brokers: [`127.0.0.1:9092`],
 });
 
-const topic = "topic-test";
+const topic = "topic-task";
 
 const consumer = kafka.consumer({ groupId: "test-group" });
 
