@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "kafka": "export HOST_IP=$(ifconfig | grep -E \"([0-9]{1,3}\\.){3}[0-9]{1,3}\" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)\ndocker-compose up",
+    "accounting:worker": "node -r @swc-node/register ./workers/accounting/index.ts"
   },
   "dependencies": {
+    "@swc-node/register": "^1.5.1",
+    "concurrently": "^7.1.0",
+    "kafkajs": "^2.0.0",
     "next": "12.1.6",
+    "next-auth": "^4.3.4",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
@@ -19,6 +25,7 @@
     "@types/react-dom": "18.0.3",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
+    "prettier": "^2.6.2",
     "typescript": "4.6.4"
   }
 }
